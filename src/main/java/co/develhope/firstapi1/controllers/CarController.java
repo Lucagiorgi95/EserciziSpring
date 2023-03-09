@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Esercizio 05 Spring
- * Chiedere al tutor chiarimenti sulla validazione
  */
 @RestController
 public class CarController {
