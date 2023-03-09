@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.InetSocketAddress;
 
 /**
  * Esercizio 04 Spring
@@ -14,8 +13,10 @@ import java.net.InetSocketAddress;
 public class HeaderController {
 
     @GetMapping(value = "/header")
-    public InetSocketAddress header(@RequestHeader HttpHeaders headers){
-        return headers.getHost();
+    public String header(@RequestHeader HttpHeaders headers){
+        String host = headers.getHost().getHostName();
+        String port = String.valueOf(headers.getHost().getPort());
+        return host + " " + port;
     }
 
 
